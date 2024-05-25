@@ -60,8 +60,31 @@ function reverseBaseSort(arr) {
 // Then sort them accordingly
 // Convert back to normal
 
+let base01 = [];
+let base02 = [];
+let base03 = [];
 
+for (let num of arr) {
+  if (num < 10 ) {
+    base01.push(num);
+  } else if (num < 100) {
+    base02.push(num);
+  } else {
+    base03.push(num)
+  }
+}
 
+let sorted03 = base03.sort(function(a, b) {
+  return a - b;
+})
+let sorted02 = base02.sort(function(a, b) {
+  return a - b;
+})
+let sorted01 = base01.sort(function(a, b) {
+  return a - b;
+})
+
+return [...sorted03, ...sorted02, ...sorted01];
 
 }
 
