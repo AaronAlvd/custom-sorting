@@ -90,37 +90,43 @@ return [...sorted03, ...sorted02, ...sorted01];
 
 function frequencySort(arr) {
   const obj = {};
-  // let array = arr.sort(function (a, b) {
-  //   return b - a;
-  // })
 
-  for (let num of array) {
+  for (let num of arr) {
     if (obj[num]) {
       obj[num]++;
     } else {
       obj[num] = 1;
     }
   }
-  
-  let valuesArr = Object.values(obj);
-  let sorted = [];
+
+
   let sorted01 = arr.sort(function(a, b) {
-    if (obj[a] === obj[b])
+    if (obj[a] === obj[b]) {
     return b - a;
+    } 
+    
+    else if (obj[a] > obj[b]) {
+      return 1 // If one, then is positive (e.g. a should come after b)
+    }
+
+    else if (obj[b] > obj[a]) {
+      return -1 // If -1, then is negative (e.g. b should come before a)
+    }
   })
 
-  for (let num of sorted01) {
-    for (let el in obj) {
-      let val = obj[el];
-      if (val === num) {
-        for (let i = 0; i < num; i++) {
-          sorted.push(Number(el));
-        }
-      }
-    }
-  }
-  console.log(sorted);
-  return sorted;
+  // for (let num of sorted01) {
+  //   for (let el in obj) {
+  //     let val = obj[el];
+  //     if (val === num) {
+  //       for (let i = 0; i < num; i++) {
+  //         sorted.push(Number(el));
+  //       }
+  //     }
+  //   }
+  // }
+  // console.log(sorted01);
+
+  return sorted01;
 }
 
 module.exports = [
