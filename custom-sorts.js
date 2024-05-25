@@ -20,7 +20,27 @@ return sorted
 }
 
 function oddEvenSort(arr) {
-  // Your code here 
+
+let even = []
+let odd = []
+
+for ( let num of arr) {
+if (num % 2 === 1) {
+  odd.push(num);
+} else {
+  even.push(num);
+}
+}
+let evenSorted = even.sort(function(a, b) {
+  return a - b;
+})
+let oddSorted = odd.sort(function(a, b) {
+  return a - b;
+})
+
+return [...oddSorted, ...evenSorted]
+
+
 }
 
 function validAnagrams(s, t) {
