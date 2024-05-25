@@ -5,6 +5,18 @@ function ageSort(users) {
   //    SORT AGES USING SORT METHOD
   //    RETURN FIRST NAMES OF USERS IN ORDER
   
+
+let notSorted = [];
+for (let el of users) {
+  notSorted.push(el)
+}
+let sorted = notSorted.sort(function(a, b) {
+  return a.age - b.age;
+})
+for (let el of sorted) {
+el = el.firstName // the elements of the array (e.g. objects are reassigned to the firstName)
+}
+return sorted
 }
 
 function oddEvenSort(arr) {
