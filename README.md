@@ -94,7 +94,7 @@ validAnagrams(s, t);            // => true
 ### `Reverse-Base Sort`
 
 Given an array, sort it such that the numbers are grouped by its base in
-descending order, but ascending within each group.
+descending order, b`ut ascending within each group.`
 
 Example:
 

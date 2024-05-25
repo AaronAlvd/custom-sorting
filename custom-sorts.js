@@ -44,11 +44,25 @@ return [...oddSorted, ...evenSorted]
 }
 
 function validAnagrams(s, t) {
-  // Your code here 
+// An anagram is a word that can spell another word using same letters
+let count = 0;
+for (let char of s) {
+  if (t.includes(char)) {
+    count++;
+  }
+}
+return count === t.length
 }
 
 function reverseBaseSort(arr) {
-  // Your code here 
+// Binary, decimal, hexadeciaml
+// Convert numbers into the decimal base number
+// Then sort them accordingly
+// Convert back to normal
+
+
+
+
 }
 
 function frequencySort(arr) {
